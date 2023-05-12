@@ -1,6 +1,4 @@
 while True:
-    #Ask user on what Operation to do
-    operation_user_input = str(input("What Operation wuld you like to use?: "))
     #define addition operation
     def add():
         #ask user for the first number
@@ -25,7 +23,7 @@ while True:
             number_output = number_1_input - number_2_input
             print(str(number_output))
         except ValueError:
-            print("That is a string please input an integer")
+            print("That is a string please input an integer")        
     #
     #define multiplication operation
     def multiply():
@@ -38,7 +36,7 @@ while True:
             number_output = number_1_input * number_2_input
             print(str(number_output))
         except ValueError:
-            print("That is a string please input an integer")
+            print("That is a string please input an integer")          
     #
     #define division operation
     def divide():
@@ -54,12 +52,15 @@ while True:
             print("That is a string please input an integer")
         except ZeroDivisionError:
             print("The number is being divided by a zero")
-    yes_user_input = ["Y" , "y" , "Yes" , "YES"]
-    no_user_input =["N", "n" , "No" , "NO"]
+
     addition_input_list = ["add" , "Add" , "ADD" , "addition","Addition" , "ADDITION"]
     subtraction_input_list = ["minus" , "Minus", "MINUS" , "subtract" , "Subtraction" , "SUBTRACTION"]
     division_input_list = ["divide", "Divide", "DIVIDE", "division" , "Division", "DIVISION"]
     multiplication_input_list = ["multiply", "Multiply", "MULTIPLY", "multiplication", "Multiplication", "MULTIPLICATION"]
+
+    #Ask user on what Operation to do
+    operation_user_input = str(input("What Operation would you like to use?: "))
+
     if operation_user_input in addition_input_list:
         add()
     elif operation_user_input in subtraction_input_list:
@@ -70,3 +71,10 @@ while True:
         divide()
     else:
         print("Please input the right operation :)")
+    try_again = input("Would you like to calculate again?:")
+    yes_user_input = ["Y" , "y" , "Yes" , "YES"]
+    no_user_input =["N", "n" , "No" , "NO"]
+    if try_again in yes_user_input:
+        continue
+    elif try_again in no_user_input:
+        break
